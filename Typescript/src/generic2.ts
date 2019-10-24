@@ -35,6 +35,29 @@ interface User {
     name: string
 }
 
-const userDb = new LocalDB<User>('user');
-userDb.add({ name: 'jay' });
-const userA = userDb.get();
+// const userDb = new LocalDB<User>('user');
+// userDb.add({ name: 'jay' });
+// const userA = userDb.get();
+
+
+interface Vegitable {
+    v: string;
+}
+
+interface Meat {
+    m: string;
+}
+
+interface Cart2<T> {
+    getItem(): T extends Vegitable ? Vegitable : Meat;
+}
+
+const cart1: Cart2<string> = {
+    getItem() {
+        return {
+            m: ''
+        }
+    }
+}
+
+cart1.getItem();

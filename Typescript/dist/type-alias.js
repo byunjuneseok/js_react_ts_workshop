@@ -1,0 +1,17 @@
+function createUserAction2(u, a) {
+    return Object.assign(Object.assign({}, u), a);
+}
+class UserImpl {
+    login() {
+        throw new Error("Method not implemented.");
+    }
+}
+function checkUser(user) {
+    if (user.login()) {
+        return "APPROVED";
+    }
+    else {
+        return "REJECTED";
+    }
+}
+//# sourceMappingURL=type-alias.js.map

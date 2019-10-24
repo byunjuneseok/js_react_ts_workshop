@@ -11,14 +11,19 @@ class LocalDB {
         this.localStorageKey = localStorageKey;
     }
     add(v) {
-        localStorage.setItem(this.localStorageKey, JSON.stringify(v));
+        localStorage.setItem(this.localStorageKey, v.seriealize());
     }
     get() {
         const v = localStorage.getItem(this.localStorageKey);
         return (v) ? JSON.parse(v) : null;
     }
 }
-const userDb = new LocalDB('user');
-userDb.add({ name: 'jay' });
-const userA = userDb.get();
+const cart1 = {
+    getItem() {
+        return {
+            m: ''
+        };
+    }
+};
+cart1.getItem();
 //# sourceMappingURL=generic2.js.map
