@@ -5,3 +5,5 @@ const helloMsg: Hello = {
     text: 'hello world'
 }
 user.name;
+
+new classA().a;
