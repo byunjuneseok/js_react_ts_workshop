@@ -1,9 +1,11 @@
 import React from 'react';
 import Hello from './Hello';
+import Wrapper from "./Wrapper";
+import Counter from "./Counter";
+
 import './App.css';
 
-
-function App() {
+function App_1() {
     const name = 'react';
     const style = {
         // dash -> camel case
@@ -23,5 +25,24 @@ function App() {
         </>
     )
 }
+
+function App_2() {
+    return (
+        <Wrapper>
+            <Hello name="react" color="red" isSpecial={true} />
+            <Hello color="pink" />
+        </Wrapper>
+    )
+}
+
+function App() {
+    return (
+        <Counter />
+    )
+}
+
+Hello.defaultProps = {
+    name: 'unknown'
+};
 
 export default App;
